@@ -15,7 +15,7 @@ cloudinary.config({
 
 
 async function uploadCloudinary(localFilePath){
-    console.log("HERE",localFilePath)
+    
     if(!localFilePath) return null
     const uploadResult = await cloudinary.uploader
     .upload(localFilePath,
@@ -28,7 +28,7 @@ async function uploadCloudinary(localFilePath){
         fs.unlinkSync(localFilePath)
     });
     
-    // fs.unlinkSync(localFilePath)
+    fs.unlinkSync(localFilePath)
     
     return uploadResult
 
